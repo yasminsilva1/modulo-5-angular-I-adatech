@@ -1,0 +1,14 @@
+<div class="container">
+  <!-- * Interpolção de String -->
+  <!-- se não houver texto, aparece a mensagem do lado direito -->
+  <!-- <p>{{ text ?? "Descrição inexistente" }}</p> -->
+
+  <!-- <p>{{ getCompanyInfo() }}</p> -->
+
+  <!-- * Property biding -->
+  <!-- <p [innerHTML]="getCompanyInfo()"></p> -->
+
+  <p><strong>Empresa:</strong> {{ company.name }}</p>
+  <p><strong>Quem somos:</strong> {{ company.description }}</p>
+  <p><strong>Endereço:</strong> {{ getCompanyAddress(company.adrress) }}</p>
+</div>

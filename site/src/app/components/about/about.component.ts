@@ -65,7 +65,7 @@ export class AboutComponent {
     const enderecoParts: string[] = [];
     for (const key in address) {
       if (address[key as keyof typeof address]) {
-        enderecoParts.push('' + address[key as keyof typeof address]);
+        enderecoParts.push(`${address[key as keyof typeof address]}`);
       }
     }
     const enderecoCompleto = enderecoParts.join(', ');

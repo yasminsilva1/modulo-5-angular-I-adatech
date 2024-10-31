@@ -11,11 +11,21 @@ export class ServicesComponent {
 
   coolText = true;
 
+  currentService = 1;
+
   changeGradeColor(): void {
     this.textColor = this.grade >= 7 ? 'blue' : 'red';
   }
 
   isCoolText(): boolean {
     return true;
+  }
+
+  nextService(): void {
+    if (this.currentService === 4) {
+      this.currentService = 0;
+    } else {
+      this.currentService++;
+    }
   }
 }

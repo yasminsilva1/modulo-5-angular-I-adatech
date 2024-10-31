@@ -1,20 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3 text-center">
+    <div class="col-md-3 text-center" *ngIf="currentService === 1">
       <h3>Serviço 1</h3>
       <p [ngStyle]="{ color: textColor }">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo quam doloremque accusamus soluta ipsam, nobis
         quibusdam? Ipsa quis placeat et, facere tenetur porro consequatur culpa, at omnis reprehenderit molestiae fuga?
       </p>
     </div>
-    <div class="col-md-3 text-center">
+
+    <div class="col-md-3 text-center" *ngIf="currentService === 2">
       <h3>Serviço 2</h3>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo debitis voluptas laboriosam repudiandae unde
         blanditiis numquam sunt nihil. Cum, suscipit. Illo qui vel maiores similique dolore voluptatum ab omnis alias.
       </p>
     </div>
-    <div class="col-md-3 text-center">
+
+    <div class="col-md-3 text-center" *ngIf="currentService === 3">
       <h3>Serviço 3</h3>
       <p [ngClass]="{ 'cool-text': isCoolText() }">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore,
@@ -23,7 +25,8 @@
         quidem quo enim?
       </p>
     </div>
-    <div class="col-md-3 text-center">
+
+    <div class="col-md-3 text-center" *ngIf="currentService === 4; else nothing">
       <h3>Serviço 4</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
@@ -31,7 +34,14 @@
         Harum repellat beatae impedit ipsam ratione sit modi ipsum deserunt.
       </p>
     </div>
+
+    <ng-template #nothing>
+      <div class="col-md-12">Nenhum serviço associado.</div>
+    </ng-template>
   </div>
 </div>
-<p [ngStyle]="{ color: textColor, fontWeight: 'bold' }">{{ grade }}</p>
-<button (click)="changeGradeColor()" class="btn btn-danger">Mudar cor</button>
+
+<button (click)="nextService()" class="btn btn-primary">Próximo Serviço</button>
+
+<!-- <p [ngStyle]="{ color: textColor, fontWeight: 'bold' }">{{ grade }}</p> -->
+<!-- <button (click)="changeGradeColor()" class="btn btn-danger">Mudar cor</button> -->

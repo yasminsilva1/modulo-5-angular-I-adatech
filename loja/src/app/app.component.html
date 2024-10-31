@@ -2,8 +2,8 @@
 
 <main class="container my-5">
   <div class="row">
-    <div class="col-md-3 mb-4">
-      <app-card [product]="products[2]"></app-card>
+    <div class="col-md-3 mb-4" *ngFor="let product of products; index as i">
+      <app-card [product]="products[i]"></app-card>
     </div>
 
     <!-- * Referenciando o 'NG-CONTENT' -->

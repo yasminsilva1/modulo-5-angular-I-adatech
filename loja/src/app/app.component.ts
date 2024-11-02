@@ -9,6 +9,7 @@ import { Product } from './models/product.model';
 })
 export class AppComponent {
   title = 'loja';
+  globalCount = 0;
 
   products: Product[] = [
     {
@@ -57,4 +58,8 @@ export class AppComponent {
       image: 'smartwatch.jpg',
     },
   ];
+
+  incrementCount(): void {
+    this.globalCount++;
+  }
 }

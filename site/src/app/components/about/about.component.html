@@ -9,6 +9,7 @@
   <!-- <p [innerHTML]="getCompanyInfo()"></p> -->
 
   <p><strong>Empresa:</strong> {{ company.name }}</p>
-  <p><strong>Quem somos:</strong> {{ company.description }}</p>
+  <!-- * Usando a nova diretiva criada -->
+  <p appHighlight color="red"><strong>Quem somos:</strong> {{ company.description }}</p>
   <p><strong>Endereço:</strong> {{ getCompanyAddress(company.adrress) }}</p>
 </div>

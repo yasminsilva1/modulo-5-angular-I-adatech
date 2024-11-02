@@ -1,9 +1,14 @@
 <div class="card">
-  <img src="assets/images/{{product.image}}" class="card-img" alt="{{product.title}}" />
+  <img
+    src="assets/images/{{ product.image }}"
+    class="card-img"
+    alt="{{ product.title }}"
+  />
   <div class="card-body">
-    <h5 class="card-title">{{product.title}}</h5>
-    <p class="card-text">{{product.description}}</p>
-    <p class="card-text">{{product.price}}</p>
+    <h5 class="card-title">{{ product.title | uppercase }}</h5>
+    <p class="card-text">{{ product.description }}</p>
+    <p class="card-text">{{ product.price | currency : "BRL" }}</p>
+    <p class="card-text">{{ product.qty }}</p>
   </div>
   <div class="card-footer d-flex justify-content-end">
     <a class="btn btn-primary me-2">Editar</a>

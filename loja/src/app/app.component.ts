@@ -9,8 +9,7 @@ import { Product } from './models/product.model';
 })
 export class AppComponent {
   title = 'loja';
-  documentNumber = '01234567890';
-  globalCount = 0;
+  // documentNumber = '01234567890';
 
   products: Product[] = [
     {
@@ -60,7 +59,10 @@ export class AppComponent {
     },
   ];
 
-  incrementCount(): void {
-    this.globalCount++;
+  cart: Product[] = [];
+
+  incrementKart(product: Product): void {
+    this.cart.push(product);
+    console.log(this.cart);
   }
 }

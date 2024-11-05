@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Product } from './models/product.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,39 @@ import { Product } from './models/product.model';
 export class AppComponent {
   title = 'loja';
   // documentNumber = '01234567890';
+  obs = new Observable((observer) => {
+    observer.next(1);
+
+    setTimeout(() => {
+      observer.next(3);
+    }, 1000);
+
+    setTimeout(() => {
+      observer.next(4);
+    }, 2000);
+
+    setTimeout(() => {
+      observer.next(2);
+    }, 500);
+
+    setTimeout(() => {
+      observer.error('Houve um erro');
+    }, 100);
+  });
+
+  constructor() {
+    this.obs.subscribe({
+      next: (response) => {
+        console.log('next:', response);
+      },
+      error: (err) => {
+        console.error(err);
+      },
+      complete: () => {
+        console.log('Terminei');
+      },
+    });
+  }
 
   products: Product[] = [
     {

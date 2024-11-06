@@ -26,22 +26,31 @@ export class AppComponent {
       observer.next(2);
     }, 500);
 
+    // setTimeout(() => {
+    //   observer.error('Houve um erro');
+    // }, 100);
+
     setTimeout(() => {
-      observer.error('Houve um erro');
+      observer.complete();
     }, 100);
   });
 
   constructor() {
-    this.obs.subscribe({
-      next: (response) => {
-        console.log('next:', response);
-      },
-      error: (err) => {
-        console.error(err);
-      },
-      complete: () => {
-        console.log('Terminei');
-      },
+    // this.obs.subscribe({
+    //   next: (response) => {
+    //     console.log('next:', response);
+    //   },
+    //   error: (err) => {
+    //     console.error(err);
+    //   },
+    //   complete: () => {
+    //     console.log('Terminei');
+    //   },
+    // });
+
+    // * Sintaxe enxuta, porém só trata o 'next'
+    this.obs.subscribe((response) => {
+      console.log(response);
     });
   }
 

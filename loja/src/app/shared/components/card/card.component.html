@@ -1,9 +1,5 @@
 <div class="card">
-  <img
-    src="assets/images/{{ product.image }}"
-    class="card-img"
-    alt="{{ product.title }}"
-  />
+  <img [src]="product.image" class="card-img" [alt]="product.title" />
   <div class="card-body">
     <h5 class="card-title">{{ product.title | uppercase }}</h5>
     <p class="card-text">{{ product.description }}</p>
@@ -13,7 +9,10 @@
   <div class="card-footer d-flex justify-content-end">
     <a class="btn btn-primary me-2">Editar</a>
     <a class="btn btn-outline-danger me-2">Excluir</a>
-    <button class="btn btn-success" (click)="cartService.addItemToCart(product)">
+    <button
+      class="btn btn-success"
+      (click)="cartService.addItemToCart(product)"
+    >
       +
     </button>
   </div>

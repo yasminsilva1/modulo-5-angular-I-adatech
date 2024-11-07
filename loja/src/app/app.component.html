@@ -1,6 +1,7 @@
 <app-header />
 
 <main class="container my-5">
+  <!-- * PIPES -->
   <!-- <div class="my-5">
     <input type="text" [(ngModel)]="documentNumber">
     {{ documentNumber | document }}
@@ -8,12 +9,13 @@
     {{ '2024-10-25' | date: 'dd/MM/yyyy' }}
   </div> -->
 
-  <div class="row">
-    <div class="col-md-3 mb-4" *ngFor="let item of products">
-      <app-card [product]="item"></app-card>
-    </div>
-  </div>
+  <app-create
+    *ngIf="pagesService.getCurrentPage() === pages.CREATE"
+  ></app-create>
 
+  <app-list *ngIf="pagesService.getCurrentPage() === pages.LIST"></app-list>
+
+  <!-- * MODAL -->
   <div
     class="modal fade"
     id="modal"
